@@ -1,5 +1,460 @@
 ---
-layout: home
-title: My website
-subtitle: This is where I will tell my friends way too much about me
+layout: page
 ---
+
+<style>
+/* ============================================
+   Academic Homepage — Li Weiqi
+   ============================================ */
+
+/* Remove the default page-level bottom padding */
+.container-md { padding-bottom: 0; }
+
+/* ---- Profile section ---- */
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e4e4e4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.profile-title {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 4px 8px 4px 0;
+  font-size: 0.92rem;
+  color: #1a6fa8;
+  text-decoration: none;
+  border: 1px solid #c5d8ea;
+  border-radius: 20px;
+  padding: 3px 12px;
+  transition: background 0.15s, color 0.15s;
+}
+.profile-links a:hover {
+  background: #1a6fa8;
+  color: #fff;
+  border-color: #1a6fa8;
+}
+
+/* ---- Section headings ---- */
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  border-left: 4px solid #1a6fa8;
+  padding-left: 10px;
+  margin: 36px 0 16px 0;
+}
+
+/* ---- News ---- */
+.news-list { list-style: none; padding: 0; margin: 0; }
+.news-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.news-date {
+  flex-shrink: 0;
+  width: 80px;
+  font-weight: 600;
+  color: #1a6fa8;
+  font-size: 0.88rem;
+}
+
+/* ---- Publications ---- */
+.pub-card {
+  border: 1px solid #e8eef2;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  background: #fafcfd;
+  transition: box-shadow 0.15s;
+}
+.pub-card:hover { box-shadow: 0 3px 12px rgba(26,111,168,0.10); }
+
+.pub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.pub-authors {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+.pub-authors .me {
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: underline dotted;
+}
+.pub-venue-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.badge-accepted {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 4px;
+  background: #1a6fa8;
+  color: #fff;
+}
+.badge-ccfa {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 4px;
+  background: #c0392b;
+  color: #fff;
+}
+.badge-submitted {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 4px;
+  background: #7f8c8d;
+  color: #fff;
+}
+.pub-tldr {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.pub-links a {
+  font-size: 0.85rem;
+  color: #1a6fa8;
+  margin-right: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.pub-links a:hover { text-decoration: underline; }
+
+/* ---- Experience & Education ---- */
+.exp-card, .edu-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  gap: 10px;
+}
+.exp-body, .edu-body { flex: 1; }
+.exp-date, .edu-date {
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  color: #888;
+  white-space: nowrap;
+}
+.exp-org, .edu-org {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #1a1a1a;
+}
+.exp-role, .edu-degree {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 2px;
+}
+.exp-desc, .edu-note {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ---- Skills ---- */
+.skill-row { margin-bottom: 6px; font-size: 0.93rem; }
+.skill-label { font-weight: 600; color: #333; margin-right: 6px; }
+
+/* ---- Interest tags ---- */
+.interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.interest-tag {
+  font-size: 0.83rem;
+  background: #eaf3fb;
+  color: #1a6fa8;
+  border: 1px solid #c0d9ee;
+  border-radius: 20px;
+  padding: 3px 12px;
+}
+
+/* ---- Divider ---- */
+.section-div {
+  border: none;
+  border-top: 1px solid #ebebeb;
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .profile-photo { width: 130px; height: 130px; }
+  .profile-name  { font-size: 1.5rem; }
+  .exp-card, .edu-card { flex-direction: column; }
+  .exp-date, .edu-date { margin-top: -8px; }
+}
+</style>
+
+<!-- ===================== PROFILE ===================== -->
+<div class="row align-items-start mb-4">
+  <div class="col-sm-3 text-center mb-4 mb-sm-0">
+    <img src="/assets/img/avatar-icon.png" alt="Li Weiqi" class="profile-photo">
+  </div>
+  <div class="col-sm-9">
+    <div class="profile-name">Li Weiqi &nbsp;<span style="font-weight:400;font-size:1.4rem;color:#555;">李伟祺</span></div>
+    <div class="profile-title">
+      M.S. Student &middot; Computer Technology (推免)<br>
+      <a href="https://www.sysu.edu.cn" target="_blank">Sun Yat-sen University</a>, Guangzhou, China
+    </div>
+    <p style="font-size:0.95rem;color:#444;line-height:1.65;margin-bottom:10px;">
+      I am a first-year M.S. student at <strong>Sun Yat-sen University (SYSU)</strong>,
+      admitted via the direct-recommendation (<em>推免</em>) pathway.
+      I received my B.S. in Software Engineering from <strong>South China University of Technology (SCUT)</strong> in 2024.
+      Currently, I am a research intern at <strong>Tencent RoboticX</strong>,
+      focusing on VLA-based mobile manipulation.
+    </p>
+    <p style="font-size:0.95rem;color:#444;line-height:1.65;margin-bottom:14px;">
+      My research interests lie in <strong>Embodied AI</strong>,
+      <strong>Vision-Language-Action (VLA) models</strong>,
+      <strong>Multimodal Large Language Models</strong>,
+      and <strong>Controllable Video Generation</strong>.
+      I aim to build robust, generalizable embodied agents that can seamlessly operate
+      in diverse real-world environments.
+    </p>
+    <div class="interest-tags">
+      <span class="interest-tag">Embodied AI</span>
+      <span class="interest-tag">VLA Models</span>
+      <span class="interest-tag">Mobile Manipulation</span>
+      <span class="interest-tag">Multimodal LLMs</span>
+      <span class="interest-tag">Video Diffusion</span>
+      <span class="interest-tag">3D Vision</span>
+    </div>
+    <div class="profile-links mt-3">
+      <a href="mailto:liwq229@mail2.sysu.edu.cn">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://github.com/liwq229" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://scholar.google.com" target="_blank">
+        <i class="fas fa-graduation-cap"></i> Google Scholar
+      </a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=Weiqi+Li" target="_blank">
+        <i class="fas fa-file-alt"></i> arXiv
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="section-div">
+
+<!-- ===================== NEWS ===================== -->
+<h3 class="section-heading">News</h3>
+<ul class="news-list">
+  <li>
+    <span class="news-date">2025.05</span>
+    <span>🤖 Joined <strong>Tencent RoboticX</strong> as a research intern, working on VLA-based mobile manipulation.</span>
+  </li>
+  <li>
+    <span class="news-date">2025.12</span>
+    <span>🎉 One paper accepted at <strong>CVPR 2026</strong> (CCF-A): <em>VLA Models Are More Generalizable Than You Think</em>.</span>
+  </li>
+  <li>
+    <span class="news-date">2025.12</span>
+    <span>📄 New preprint: <em>ACD</em> submitted to IJCV.
+      [<a href="https://arxiv.org/abs/2512.21268" target="_blank">arXiv:2512.21268</a>]</span>
+  </li>
+  <li>
+    <span class="news-date">2025.09</span>
+    <span>📄 <em>HumanGenesis</em> submitted to ICML 2026.
+      [<a href="https://arxiv.org/abs/2508.09858" target="_blank">arXiv:2508.09858</a>]</span>
+  </li>
+  <li>
+    <span class="news-date">2024.09</span>
+    <span>🎓 Started M.S. at Sun Yat-sen University (direct recommendation / 推免).</span>
+  </li>
+</ul>
+
+<hr class="section-div">
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<h3 class="section-heading">Publications</h3>
+<p style="font-size:0.88rem;color:#888;margin-top:-10px;margin-bottom:16px;">
+  * denotes equal contribution &nbsp;|&nbsp; <span style="text-decoration:underline dotted;">underline</span> denotes corresponding author
+</p>
+
+<!-- Paper 1: VLA -->
+<div class="pub-card">
+  <div class="pub-title">
+    VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling
+  </div>
+  <div class="pub-authors">
+    <span class="me">Li Weiqi</span>, et al.
+  </div>
+  <div class="pub-venue-row">
+    <span class="badge-accepted">CVPR 2026</span>
+    <span class="badge-ccfa">CCF-A</span>
+  </div>
+  <div class="pub-tldr">
+    Investigates why VLA models (e.g., &pi;0.5) fail dramatically under novel viewpoints.
+    Decouples the issue into physical vs.&nbsp;spatial modeling failures, showing that the pretrained model retains
+    strong physical understanding while spatial representation mismatch is the key bottleneck.
+    Proposes two lightweight adaptation methods &mdash; <strong>FTM</strong> (token affine modulation) and
+    <strong>FLA</strong> (low-rank ViT update) &mdash; that recover cross-viewpoint performance by updating only
+    4K&ndash;4.7M parameters, achieving <strong>90.8%</strong> success rate on the LIBERO-V benchmark
+    with a <strong>99&times;</strong> parameter efficiency gain over LoRA.
+    One-shot sim-to-real transfer validated on a real Franka arm.
+  </div>
+  <div class="pub-links">
+    <a href="https://arxiv.org/abs/2512.02902" target="_blank">📄 arXiv</a>
+  </div>
+</div>
+
+<!-- Paper 2: HumanGenesis -->
+<div class="pub-card">
+  <div class="pub-title">
+    Collaborative Real2Sim–Sim2Real Agential Learning for Geometric and Generative Human Dynamics
+  </div>
+  <div class="pub-authors">
+    <span class="me">Li Weiqi</span>, et al.
+    <em style="font-size:0.85rem;color:#888;">(HumanGenesis)</em>
+  </div>
+  <div class="pub-venue-row">
+    <span class="badge-submitted">ICML 2026 (Under Review)</span>
+  </div>
+  <div class="pub-tldr">
+    Proposes <strong>HumanGenesis</strong>, a multi-agent collaborative framework that unifies
+    Real2Sim and Sim2Real in a closed loop for human dynamics modeling.
+    The system integrates a 3DGS+SMPL+Learnable-LBS <em>Reconstructor</em>,
+    a Qwen2.5-VL-driven <em>Critique Agent</em> with multi-round self-reflection for
+    fine-grained reconstruction refinement, and a <em>Video Harmonizer</em> that enhances
+    human-scene consistency and temporal coherence in rendered videos.
+    Achieves state-of-the-art results on HumanVid and NeuMan benchmarks.
+  </div>
+  <div class="pub-links">
+    <a href="https://arxiv.org/abs/2508.09858" target="_blank">📄 arXiv</a>
+  </div>
+</div>
+
+<!-- Paper 3: ACD -->
+<div class="pub-card">
+  <div class="pub-title">
+    ACD: Direct Conditional Control for Video Diffusion Models via Attention Supervision
+  </div>
+  <div class="pub-authors">
+    ..., <span class="me">Li Weiqi</span>, et al.
+  </div>
+  <div class="pub-venue-row">
+    <span class="badge-submitted">IJCV (Under Review)</span>
+  </div>
+  <div class="pub-tldr">
+    Proposes <strong>Attention-Conditional Diffusion (ACD)</strong>, a controllable video generation
+    framework built on CogVideoX.
+    Unlike traditional guidance-level conditioning, ACD directly supervises cross-attention maps
+    inside the diffusion model via a dual-branch (masked/unmasked) shared-parameter fine-tuning scheme,
+    moving conditioning from output-level to attention-level and eliminating common artifacts.
+    Uses sparse 3D-aware object layouts as control signals with a layout ControlNet,
+    supported by an automated annotation pipeline on 20K RealEstate training clips.
+    Outperforms AC3D and other baselines on FID/FVD and camera error metrics.
+  </div>
+  <div class="pub-links">
+    <a href="https://arxiv.org/abs/2512.21268" target="_blank">📄 arXiv</a>
+  </div>
+</div>
+
+<hr class="section-div">
+
+<!-- ===================== EXPERIENCE ===================== -->
+<h3 class="section-heading">Research Experience</h3>
+
+<div class="exp-card">
+  <div class="exp-body">
+    <div class="exp-org">Tencent RoboticX</div>
+    <div class="exp-role">Research Intern &mdash; Embodied AI</div>
+    <div class="exp-desc">
+      Working on Vision-Language-Action (VLA) models for mobile manipulation tasks,
+      investigating generalization, spatial understanding, and sim-to-real transfer
+      in whole-body robot control pipelines.
+    </div>
+  </div>
+  <div class="exp-date">2025 &ndash; Present</div>
+</div>
+
+<div class="exp-card">
+  <div class="exp-body">
+    <div class="exp-org">Sun Yat-sen University — Graduate Research</div>
+    <div class="exp-role">M.S. Researcher &mdash; Embodied AI &amp; Multimodal Generation</div>
+    <div class="exp-desc">
+      Research on generalizable VLA models (CVPR 2026) and multi-agent frameworks
+      for human dynamics modeling (ICML 2026 submission).
+    </div>
+  </div>
+  <div class="exp-date">2024.09 &ndash; Present</div>
+</div>
+
+<hr class="section-div">
+
+<!-- ===================== EDUCATION ===================== -->
+<h3 class="section-heading">Education</h3>
+
+<div class="edu-card">
+  <div class="edu-body">
+    <div class="edu-org">Sun Yat-sen University (中山大学)</div>
+    <div class="edu-degree">M.S. in Computer Technology &nbsp;&middot;&nbsp; Direct Recommendation (推免)</div>
+    <div class="edu-note">School of Computer Science and Engineering</div>
+  </div>
+  <div class="edu-date">Sep 2024 &ndash; Jun 2027</div>
+</div>
+
+<div class="edu-card">
+  <div class="edu-body">
+    <div class="edu-org">South China University of Technology (华南理工大学)</div>
+    <div class="edu-degree">B.S. in Software Engineering</div>
+    <div class="edu-note">School of Software Engineering</div>
+  </div>
+  <div class="edu-date">Sep 2020 &ndash; Jun 2024</div>
+</div>
+
+<hr class="section-div">
+
+<!-- ===================== SKILLS ===================== -->
+<h3 class="section-heading">Technical Skills</h3>
+<div class="mb-4">
+  <div class="skill-row">
+    <span class="skill-label">Frameworks:</span>
+    PyTorch &middot; HuggingFace Transformers &middot; Diffusers &middot; LoRA / PEFT &middot; 3D Gaussian Splatting &middot; SMPL
+  </div>
+  <div class="skill-row">
+    <span class="skill-label">Research Areas:</span>
+    Embodied AI &middot; VLA Policy Learning &middot; Multimodal Modeling &middot; Controllable Video Generation &middot; Large Model Fine-tuning
+  </div>
+  <div class="skill-row">
+    <span class="skill-label">Languages:</span>
+    Python &middot; C++ &middot; CUDA
+  </div>
+</div>
+
+<p style="font-size:0.82rem;color:#bbb;text-align:right;margin-top:30px;">
+  Last updated: May 2026
+</p>
