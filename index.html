@@ -107,8 +107,12 @@ layout: page
 .pub-authors .me {
   font-weight: 700;
   color: #1a1a1a;
-  text-decoration: underline dotted;
 }
+.pub-authors a {
+  color: #1a6fa8;
+  text-decoration: none;
+}
+.pub-authors a:hover { text-decoration: underline; }
 .pub-venue-row {
   display: flex;
   align-items: center;
@@ -224,12 +228,13 @@ layout: page
   <div class="col-sm-9">
     <div class="profile-name">Li Weiqi &nbsp;<span style="font-weight:400;font-size:1.4rem;color:#555;">李伟祺</span></div>
     <div class="profile-title">
-      M.S. Student &middot; Computer Technology (推免)<br>
+      M.S. Student &middot; Computer Technology<br>
       <a href="https://www.sysu.edu.cn" target="_blank">Sun Yat-sen University</a>, Guangzhou, China
     </div>
     <p style="font-size:0.95rem;color:#444;line-height:1.65;margin-bottom:10px;">
       I am a first-year M.S. student at <strong>Sun Yat-sen University (SYSU)</strong>,
-      admitted via the direct-recommendation (<em>推免</em>) pathway.
+      advised by Prof. <a href="http://www.linliang.net" target="_blank">Liang Lin</a>
+      and Prof. <a href="https://wanggrun.github.io/" target="_blank">Guangrun Wang</a>.
       I received my B.S. in Software Engineering from <strong>South China University of Technology (SCUT)</strong> in 2024.
       Currently, I am a research intern at <strong>Tencent RoboticX</strong>,
       focusing on VLA-based mobile manipulation.
@@ -292,7 +297,7 @@ layout: page
   </li>
   <li>
     <span class="news-date">2024.09</span>
-    <span>🎓 Started M.S. at Sun Yat-sen University (direct recommendation / 推免).</span>
+    <span>🎓 Started M.S. at Sun Yat-sen University.</span>
   </li>
 </ul>
 
@@ -301,7 +306,7 @@ layout: page
 <!-- ===================== PUBLICATIONS ===================== -->
 <h3 class="section-heading">Publications</h3>
 <p style="font-size:0.88rem;color:#888;margin-top:-10px;margin-bottom:16px;">
-  * denotes equal contribution &nbsp;|&nbsp; <span style="text-decoration:underline dotted;">underline</span> denotes corresponding author
+  <strong style="color:#1a1a1a;">Bold</strong> denotes my name &nbsp;|&nbsp; † denotes corresponding author
 </p>
 
 <!-- Paper 1: VLA -->
@@ -310,7 +315,9 @@ layout: page
     VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling
   </div>
   <div class="pub-authors">
-    <span class="me">Li Weiqi</span>, et al.
+    <span class="me">Weiqi Li</span>, Quande Zhang, Ruifeng Zhai,
+    <a href="http://www.linliang.net" target="_blank">Liang Lin</a>,
+    <a href="https://wanggrun.github.io/" target="_blank">Guangrun Wang</a><sup>†</sup>
   </div>
   <div class="pub-venue-row">
     <span class="badge-accepted">CVPR 2026</span>
@@ -334,11 +341,12 @@ layout: page
 <!-- Paper 2: HumanGenesis -->
 <div class="pub-card">
   <div class="pub-title">
-    Collaborative Real2Sim–Sim2Real Agential Learning for Geometric and Generative Human Dynamics
+    HumanGenesis: Agent-Based Geometric and Generative Modeling for Synthetic Human Dynamics
   </div>
   <div class="pub-authors">
-    <span class="me">Li Weiqi</span>, et al.
-    <em style="font-size:0.85rem;color:#888;">(HumanGenesis)</em>
+    <span class="me">Weiqi Li</span>, Zehao Zhang,
+    <a href="http://www.linliang.net" target="_blank">Liang Lin</a>,
+    <a href="https://wanggrun.github.io/" target="_blank">Guangrun Wang</a><sup>†</sup>
   </div>
   <div class="pub-venue-row">
     <span class="badge-submitted">NeurIPS 2026 (Under Review)</span>
@@ -363,7 +371,9 @@ layout: page
     ACD: Direct Conditional Control for Video Diffusion Models via Attention Supervision
   </div>
   <div class="pub-authors">
-    ..., <span class="me">Li Weiqi</span>, et al.
+    <span class="me">Weiqi Li</span>, Zehao Zhang,
+    <a href="http://www.linliang.net" target="_blank">Liang Lin</a>,
+    <a href="https://wanggrun.github.io/" target="_blank">Guangrun Wang</a><sup>†</sup>
   </div>
   <div class="pub-venue-row">
     <span class="badge-submitted">IJCV (Under Review)</span>
@@ -421,7 +431,7 @@ layout: page
 <div class="edu-card">
   <div class="edu-body">
     <div class="edu-org">Sun Yat-sen University (中山大学)</div>
-    <div class="edu-degree">M.S. in Computer Technology &nbsp;&middot;&nbsp; Direct Recommendation (推免)</div>
+    <div class="edu-degree">M.S. in Computer Technology</div>
     <div class="edu-note">School of Computer Science and Engineering</div>
   </div>
   <div class="edu-date">Sep 2024 &ndash; Jun 2027</div>
