@@ -14,7 +14,7 @@ author: Li Weiqi
 ###############################################
 
 navbar-links:
-  Google Scholar: "https://scholar.google.com/citations?user=liwq229"
+  Google Scholar: "https://scholar.google.com/citations?user=IUlVSdEAAAAJ"
   GitHub: "https://github.com/liwq229"
   arXiv: "https://arxiv.org/search/?searchtype=author&query=Li+Weiqi"
 
@@ -32,7 +32,7 @@ round-avatar: true
 social-network-links:
   email: "liwq229@mail2.sysu.edu.cn"
   github: liwq229
-#  google-scholar: "your_scholar_id_here"
+#  google-scholar: "IUlVSdEAAAAJ"
 #  linkedin: yourname
 
 rss-description: Li Weiqi's academic homepage — Embodied AI, VLA, Multimodal LLMs
