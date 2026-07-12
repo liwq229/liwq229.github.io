@@ -278,6 +278,10 @@ layout: page
 <h3 class="section-heading">News</h3>
 <ul class="news-list">
   <li>
+    <span class="news-date">2026.07</span>
+    <span>📄 New preprint: <em>Frustum-Aware 3D Vision-Language Learning for Adaptive City-Scale Spatial Reasoning</em> — active frustum-focused reasoning (FAPO) and the CityVerse-Bench benchmark for city-scale 3D-VLMs.</span>
+  </li>
+  <li>
     <span class="news-date">2025.05</span>
     <span>🤖 Joined <strong>Tencent RoboticX</strong> as a research intern, working on VLA-based mobile manipulation.</span>
   </li>
@@ -308,6 +312,29 @@ layout: page
 <p style="font-size:0.88rem;color:#888;margin-top:-10px;margin-bottom:16px;">
   <strong style="color:#1a1a1a;">Bold</strong> denotes my name &nbsp;|&nbsp; † denotes corresponding author
 </p>
+
+<!-- Paper 0: Frustum-Aware 3D VLM -->
+<div class="pub-card">
+  <div class="pub-title">
+    Frustum-Aware 3D Vision-Language Learning for Adaptive City-Scale Spatial Reasoning
+  </div>
+  <div class="pub-venue-row">
+    <span class="badge-submitted">Preprint</span>
+  </div>
+  <div class="pub-tldr">
+    Introduces <strong>Aerial 3D Urban Reasoning</strong>, a new task for low-altitude city-scale 3D
+    understanding and spatial reasoning, where sparse targets and severe depth ambiguity make passive
+    global perception ineffective. Proposes <strong>Frustum-Aware Policy Optimization (FAPO)</strong>,
+    which enables active vision-language interactive reasoning with adaptive frustum focusing:
+    a two-stage strategy that first uses supervised fine-tuning to initialize frustum-based visual
+    evidence localization and step-by-step reasoning, then reinforcement learning to optimize the
+    focusing policy end-to-end with a depth-aware IoU (D-IoU) reward. Also establishes
+    <strong>CityVerse-Bench</strong>, a large-scale city-level benchmark unifying posed images,
+    point clouds, and depth maps for fine-grained description, referential grounding, holistic scene
+    understanding, and complex spatial reasoning. Consistently outperforms strong baselines across
+    diverse urban tasks.
+  </div>
+</div>
 
 <!-- Paper 1: VLA -->
 <div class="pub-card">
@@ -463,5 +490,5 @@ layout: page
 </div>
 
 <p style="font-size:0.82rem;color:#bbb;text-align:right;margin-top:30px;">
-  Last updated: May 2026
+  Last updated: July 2026
 </p>
